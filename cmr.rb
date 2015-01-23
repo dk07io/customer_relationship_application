@@ -52,7 +52,7 @@ def add_contact
 		puts "Notes"
 		note=gets.chomp
 
-		new_contact=AddContact.new(first_name, last_name, email, note)
+		new_contact=Contacts.new(first_name, last_name, email, note)
 	end
 end
 
