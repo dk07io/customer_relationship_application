@@ -1,4 +1,9 @@
 #cmr is giong to be responsible for Setting up menu and menu selection
+class CMR
+
+def initialize(name)
+	@name = name
+end
 
 def print_main_menu
 puts "[1] Add a contact"
@@ -33,6 +38,9 @@ case menu_selection
 	puts "Sorry type in either Add, Modify, Display All, Display Contact, Display Attribute, Delete or Exit."
  end
 end
+end
 
 
-main_menu
+
+bitmakers=CMR.new("Bitmakers")
+bitmakers.main_menu
