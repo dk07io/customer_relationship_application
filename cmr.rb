@@ -1,5 +1,8 @@
 #cmr is giong to be responsible for Setting up menu and menu selection
+require_relative './addcontacts.rb'
+
 class CMR
+attr_accessor :name 
 
 def initialize(name)
 	@name = name
@@ -38,6 +41,19 @@ case menu_selection
 	puts "Sorry type in either Add, Modify, Display All, Display Contact, Display Attribute, Delete or Exit."
  end
 end
+
+def add_contact
+		puts "First Name"
+		first_name=gets.chomp
+		puts "Last Name"
+		last_name=gets.chomp
+		puts "Email"
+		email=gets.chomp
+		puts "Notes"
+		note=gets.chomp
+
+		new_contact=AddContact.new(first_name, last_name, email, note)
+	end
 end
 
 
