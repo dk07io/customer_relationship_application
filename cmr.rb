@@ -1,5 +1,5 @@
 #cmr is giong to be responsible for Setting up menu and menu selection
-require_relative './addcontacts.rb'
+require_relative './contacts.rb'
 
 class CMR
 attr_accessor :name 
@@ -27,19 +27,19 @@ def main_menu
 end
 
 def select_menu(menu_selection)
-case menu_selection
- when "add" then add_contact
- when "modify" then modify_contact
- when "display all" then display_all
- when "display contact" then display_contact
- when "display attribute" then display_attribute
- when "delete" then delete
- when "exit"
-	puts "Goodbye!"
-	return
- else 
-	puts "Sorry type in either Add, Modify, Display All, Display Contact, Display Attribute, Delete or Exit."
- end
+	case menu_selection
+		 when "add" then add_contact
+		 when "modify" then modify_contact
+		 when "display all" then display_all
+		 when "display contact" then display_contact
+		 when "display attribute" then display_attribute
+		 when "delete" then delete
+		 when "exit"
+			puts "Goodbye!"
+			return
+		 else 
+			puts "Sorry type in either Add, Modify, Display All, Display Contact, Display Attribute, Delete or Exit."
+	 end
 end
 
 def add_contact
@@ -53,6 +53,7 @@ def add_contact
 		note=gets.chomp
 
 		new_contact=Contacts.new(first_name, last_name, email, note)
+		# @rolodex.add_contact(new_contact)
 	end
 end
 
