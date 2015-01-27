@@ -1,8 +1,8 @@
 #cmr is giong to be responsible for Setting up menu and menu selection
-require_relative './contact.rb'
 require_relative './rolodex.rb'
+require_relative './contact.rb'
 
-class CMR
+class CRM
 attr_reader :name 
 
 def initialize(name)
