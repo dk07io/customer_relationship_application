@@ -1,11 +1,13 @@
 #cmr is giong to be responsible for Setting up menu and menu selection
-require_relative './contacts.rb'
+require_relative './contact.rb'
+require_relative './rolodex.rb'
 
 class CMR
-attr_accessor :name 
+attr_reader :name 
 
 def initialize(name)
 	@name = name
+  @rolodex = Rolodex.new
 end
 
 def print_main_menu
@@ -43,17 +45,18 @@ def select_menu(menu_selection)
 end
 
 def add_contact
-		puts "First Name"
+		puts "First Name:"
 		first_name=gets.chomp
-		puts "Last Name"
+		puts "Last Name:"
 		last_name=gets.chomp
-		puts "Email"
+		puts "Email:"
 		email=gets.chomp
-		puts "Notes"
+		puts "Notes:"
 		note=gets.chomp
 
-		new_contact=Contacts.new(first_name, last_name, email, note)
-		# @rolodex.add_contact(new_contact)
+		new_contact=Contact.new(first_name, last_name, email, note)
+		# new_contact.display_contacts
+		@rolodex.add_contact(new_contact)
 	end
 end
 
