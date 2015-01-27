@@ -3,7 +3,7 @@ require_relative './rolodex.rb'
 require_relative './contact.rb'
 
 class CRM
-attr_reader :name 
+attr_reader :name
 
 def initialize(name)
 	@name = name
@@ -22,13 +22,18 @@ puts "Enter 'Add', 'Modify', 'Display All', 'Display contact:"
 end
 
 def main_menu
-	puts "Welcome to Bitmakers"
+	puts "Welcome to #{@name}"
+
+	while true
 	print_main_menu
-	menu_selection=gets.chomp.downcase
+	menu_selection = gets.chomp.downcase
 	select_menu(menu_selection)
+	return if input == 7
+  end
+	  
 end
 
-def select_menu(menu_selection)
+def select_menu
 	case menu_selection
 		 when "add" then add_contact
 		 when "modify" then modify_contact
@@ -62,5 +67,5 @@ end
 
 
 
-bitmakers=CMR.new("Bitmakers")
+bitmakers=CRM.new("Bitmakers")
 bitmakers.main_menu
