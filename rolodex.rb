@@ -2,7 +2,7 @@ class Rolodex
 	@@ids = 1001
 
 	def initialize
-		@contacts = [ ]
+		@contacts = []
 		# @ids = 1001
 	end
 	def add_contact(contact)
