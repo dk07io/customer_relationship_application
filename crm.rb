@@ -52,22 +52,22 @@ end
 def add_contact
 		puts "First Name:"
 		first_name=gets.chomp
-		unless first_name.is_a?(String)
-			first_name=gets.chomp
-		end
+		# unless first_name.is_a?(String)
+		# 	first_name=gets.chomp
+		# end
 		
 		puts "Last Name:"
 		last_name=gets.chomp
-		if last_name.empty?
-			puts "Please type in your last name:"
-			last_name=gets.chomp
-		end
+		# if last_name.empty?
+		# 	puts "Please type in your last name:"
+		# 	last_name=gets.chomp
+		# end
 
 		puts "Email:"
 		email=gets.chomp
-		if email.empty?
-			puts "Please type in your email"
-		end
+		# if email.empty?
+		# 	puts "Please type in your email"
+		# end
 
 		puts "Notes:"
 		note=gets.chomp
@@ -75,6 +75,16 @@ def add_contact
 		new_contact=Contact.new(first_name, last_name, email, note)
 		# new_contact.display_contacts
 		@rolodex.add_contact(new_contact)
+	end
+
+	def display_all
+		@rolodex.display_all
+	end
+
+	def display_contact
+		puts "Enter contact's ID to display it's information:"
+		id_input=gets.chomp.to_i
+		@rolodex.display_contact(id_input)
 	end
 
 end
