@@ -18,7 +18,7 @@ puts "[4] Display contact"
 puts "[5] Dispaly an attribute"
 puts "[6] Delete a contact"
 puts "[7] Exit"
-puts "Enter 'Add', 'Modify', 'Display All', 'Display contact:"
+puts "Enter 'Add', 'Modify', 'Display All', 'Display contact:', 'Display Attribute', 'Delete', or 'Exit':"
 end
 
 def main_menu
@@ -28,7 +28,7 @@ def main_menu
 	print_main_menu
 	menu_selection = gets.chomp.downcase
 	select_menu(menu_selection)
-	return if menu_selection == 7
+	return if menu_selection == "Exit"
   end
 	  
 end
@@ -45,7 +45,7 @@ def select_menu (menu_selection)
 			puts "Goodbye!"
 			return
 		 else 
-			puts "Sorry type in either Add, Modify, Display All, Display Contact, Display Attribute, Delete or Exit."
+			puts "Sorry type in either 'Add', 'Modify', 'Display All', 'Display contact:', 'Display Attribute', 'Delete', or 'Exit':"
 	 end
 end
 
