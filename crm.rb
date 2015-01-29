@@ -28,12 +28,12 @@ def main_menu
 	print_main_menu
 	menu_selection = gets.chomp.downcase
 	select_menu(menu_selection)
-	return if input == 7
+	return if menu_selection == 7
   end
 	  
 end
 
-def select_menu
+def select_menu (menu_selection)
 	case menu_selection
 		 when "add" then add_contact
 		 when "modify" then modify_contact
