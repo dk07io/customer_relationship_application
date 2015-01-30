@@ -30,7 +30,6 @@ def main_menu
 	select_menu(menu_selection)
 	return if menu_selection == "Exit"
   end
-	  
 end
 
 def select_menu (menu_selection)
@@ -43,7 +42,7 @@ def select_menu (menu_selection)
 		 when "delete" then delete
 		 when "exit"
 			puts "Goodbye!"
-			return
+			exit
 		 else 
 			puts "Sorry type in either 'Add', 'Modify', 'Display All', 'Display contact:', 'Display Attribute', 'Delete', or 'Exit':"
 	 end
@@ -83,10 +82,15 @@ def add_contact
 
 	def display_contact
 		puts "Enter contact's ID to display it's information:"
-		id_input=gets.chomp.to_i
+		id_input = gets.chomp.to_i
 		@rolodex.display_contact(id_input)
 	end
 
+	def display_attribute
+		puts "Please enter first or last name, email or note to find your contact:"
+		attribute_input = gets.chomp.downcase
+		@rolodex.display_attribute(attribute_input)
+	end
 end
 
 

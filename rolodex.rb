@@ -27,4 +27,39 @@ class Rolodex
 			end
 	end
 end
+
+	def display_attribute(attribute_input)
+		@contacts.each do |contact|
+			if attribute_input.include? "first"
+				puts contact.first_name
+			elsif attribute_input.include? "last"
+				puts contact.last_name
+			elsif attribute_input.include? "email"
+				puts contact.email
+			elsif attribute_input.include? "note"
+				puts contact.note
+			else
+				display_attribute(attribute_input)
+			end
+		end
+	end
 end
+				
+
+
+
+	
+
+
+
+
+
+
+	# 		if attribute.id || attribute.first_name || attribute.last_name || attribute.email || attribute.note == attribute_input
+	# 			puts "Name: #{attribute.first_name} #{attribute.last_name},Email: #{attribute.email}, Note: #{attribute.note}"
+	# 		else
+	# 			puts "Sorry, there was nothing under your search"
+	# 		end
+	# 	end
+	# end
+
