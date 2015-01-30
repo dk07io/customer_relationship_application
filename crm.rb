@@ -91,6 +91,17 @@ def add_contact
 		attribute_input = gets.chomp.downcase
 		@rolodex.display_attribute(attribute_input)
 	end
+
+	def delete
+		puts "Please type in the ID of the contact to delete:"
+		delete_input = gets.chomp.to_i
+		@rolodex.delete_contact(delete_input)
+	
+	end
+
+
+
+
 end
 
 

@@ -39,23 +39,36 @@ end
 			elsif attribute_input.include? "note"
 				puts contact.note
 			else
-				display_attribute(attribute_input)
+				return
 			end
 		end
 	end
+
+	def find_contact(id_number)
+		@contacts.find { |contact| contact.id = id_number}
+	end
+
+	def delete_contact(delete_input)
+		contact_to_delete = find_contact(delete_input)
+		if @contacts.delete(contact_to_delete)
+			puts "contact deleted"
+		else
+			puts "This contact does not exist"
+		end
+		# contact = @contacts[("#{delete_input}").to_i]
+		# contact.delete
+
+		# @contacts.each do |contacts|
+		# 	if contact.id == delete_input
+		# 		@contacts.delete(delete_input)
+		# 		puts "contact deleted!"
+		# 	else
+		# 		puts "Sorry, this ID doesnt not exist"
+		# 	end
+		# end
+	end
 end
-				
-
-
-
-	
-
-
-
-
-
-
-	# 		if attribute.id || attribute.first_name || attribute.last_name || attribute.email || attribute.note == attribute_input
+				# 		if attribute.id || attribute.first_name || attribute.last_name || attribute.email || attribute.note == attribute_input
 	# 			puts "Name: #{attribute.first_name} #{attribute.last_name},Email: #{attribute.email}, Note: #{attribute.note}"
 	# 		else
 	# 			puts "Sorry, there was nothing under your search"
